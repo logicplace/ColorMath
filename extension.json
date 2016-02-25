@@ -1,0 +1,25 @@
+{
+	"name": "ColorMath",
+	"version": "0.1",
+	"author": [
+		"Sapphire Becker"
+	],
+	"url": "https://github.com/logicplace/ColorMath",
+	"descriptionmsg": "pfunc_desc",
+	"license-name": "MIT",
+	"type": "parserhook",	
+	"ExtensionMessagesFiles": {
+		"ColorMathMagic": "ColorMath.i18n.magic.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"ColorMathHooks::onParserFirstCallInit"
+		]
+	},
+	"AutoloadClasses": {
+		"CSSName2Color": "CSSName2Color.php",
+		"ColorMath": "ColorMath_body.php",
+		"ColorMathHooks": "ColorMath.hooks.php"
+	},
+	"manifest_version": 1
+}
