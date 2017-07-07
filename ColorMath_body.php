@@ -36,7 +36,7 @@ class Color {
 	/**
 	 * @param $color Color value
 	 */
-	public function Color( $color = false ) {
+	public function __construct( $color = false ) {
 		if ( $color ) $this->parse($color);
 	}
 
