@@ -28,7 +28,7 @@ There are currently only two commands *darken* and *lighten*.
 If a CSS color name is specified, these will attempt to use the respective dark\* and light\* versions.
 
 ### Component modification ###
-These are specified as keyword arugments of the form: `component=modification`
+These are specified as keyword arguments of the form: `component=modification`
 
 The components may be:
 
