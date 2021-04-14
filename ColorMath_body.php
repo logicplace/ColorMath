@@ -42,17 +42,17 @@ class ColorMath {
 			$xpl = explode( '=', trim( $frame->expand( $arg ) ), 2 );
 			if ( count( $xpl ) == 2 ) {
 				$v = strtolower( trim( $xpl[0] ) );
-				if ( $v == 'output' ) $output = trim( $xpl[0] );
+				if ( $v == 'output' ) $output = trim( $xpl[1] );
 				else $color->apply( $v, $xpl[1] );
 			} else {
 				$color->transform( $xpl[0] );
 			}
 		}
 
-		if ( strncmp( $output, 'format:', 7 ) ) {
+		if ( strncmp( $output, 'format:', 7 ) == 0 ) {
 			return $color->customString( substr( $output, 7 ) );
 		}
-		return $color->string($output);
+		return $color->string( $output );
 	}
 }
 
