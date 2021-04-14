@@ -1,13 +1,13 @@
 {
 	"name": "ColorMath",
-	"version": "0.1",
+	"version": "0.2",
 	"author": [
 		"Sapphire Becker"
 	],
 	"url": "https://github.com/logicplace/ColorMath",
 	"descriptionmsg": "cmath_desc",
 	"license-name": "MIT",
-	"type": "parserhook",	
+	"type": "parserhook",
 	"ExtensionMessagesFiles": {
 		"ColorMathMagic": "ColorMath.i18n.magic.php"
 	},
@@ -22,9 +22,9 @@
 		"ColorMathHooks": "ColorMath.hooks.php"
 	},
 	"MessagesDirs": {
-                "ColorMath": [
-                        "i18n"
-                ]
-        },
+		"ColorMath": [
+			"i18n"
+		]
+	},
 	"manifest_version": 1
 }

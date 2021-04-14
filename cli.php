@@ -4,20 +4,29 @@ include 'ColorMath_body.php';
 
 if (isset($argv)) {
 	$color = new Color($argv[1]);
+	$outputted = false;
 
-	for($i = 2; $i < count($argv); ++$i) {
-		$tmp = explode("=", $argv[$i], 2);
+	for ( $i = 2; $i < count($argv); ++$i ) {
+		$tmp = explode( "=", $argv[$i], 2 );
 		$var = $tmp[0];
-		if ( count($tmp) == 2 ) {
-			$op = trim($tmp[1], "\"'");
-			$color->apply($var, $op);
+		if ( $var == '--output' || $var == '-o' ) {
+			print $color->string( $argv[++$i] ) . "\n";
+			$outputted = true;
+		} elseif ( $var == '--format' || $var == '-f' ) {
+			print $color->customString( $argv[++$i] ) . "\n";
+			$outputted = true;
+		} elseif ( count( $tmp ) == 2 ) {
+			$op = trim( $tmp[1], "\"'" );
+			$color->apply( $var, $op );
 		} else {
-			$color->transform($var);
+			$color->transform( $var );
 		}
 	}
 
-	//print_r($color->getRGB());
-	//print "\n";
-	//print_r($color->getHSL());
-	print $color->rgbString() . "\n" . $color->hslString() . "\n" . $color->cssString() . "\n";
+	if ( ! $outputted ) { 
+		$rgb = $color->rgbString();
+		$hsl = $color->hslString();
+		$css = $color->cssString();
+		print "$rgb\n$hsl\n$css\n";
+	}
 }
